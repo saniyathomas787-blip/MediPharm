@@ -1,0 +1,599 @@
+.medicine-management-page {
+  min-height: calc(100vh - 80px);
+  background: #f5f7fb;
+  padding: 34px 42px 50px;
+  box-sizing: border-box;
+  color: #1f2937;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.medicine-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.medicine-title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.medicine-title-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #e9f7f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.medicine-page-header h1 {
+  margin: 0;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.medicine-page-header p {
+  margin: 5px 0 0;
+  color: #8a93a3;
+  font-size: 13px;
+}
+
+.back-dashboard-button {
+  border: 1px solid #dfe5eb;
+  background: #ffffff;
+  color: #596575;
+  padding: 10px 16px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.back-dashboard-button:hover {
+  border-color: #16836c;
+  color: #16836c;
+  background: #f2faf7;
+}
+
+/* =========================
+   TOOLBAR
+========================= */
+
+.medicine-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.medicine-search-box {
+  width: 390px;
+  height: 44px;
+  background: #ffffff;
+  border: 1px solid #e3e8ee;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 14px;
+  box-sizing: border-box;
+}
+
+.medicine-search-box span {
+  font-size: 15px;
+  opacity: 0.65;
+}
+
+.medicine-search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 13px;
+  color: #374151;
+}
+
+.medicine-search-box input::placeholder {
+  color: #a0a8b4;
+}
+
+.add-medicine-button {
+  border: none;
+  background: #16836c;
+  color: #ffffff;
+  padding: 12px 18px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.add-medicine-button:hover {
+  background: #126f5b;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   NOTIFICATION
+========================= */
+
+.medicine-toast {
+  position: fixed;
+  top: 92px;
+  right: 30px;
+  z-index: 9999;
+  min-width: 270px;
+  max-width: 360px;
+  padding: 13px 17px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #16836c;
+  border: 1px solid #dcefe8;
+  box-shadow: 0 8px 25px rgba(30, 50, 70, 0.14);
+  font-size: 13px;
+  font-weight: 600;
+  animation: medicineToastSlide 0.25s ease;
+}
+
+@keyframes medicineToastSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   FORM CARD
+========================= */
+
+.medicine-form-card {
+  background: #ffffff;
+  border: 1px solid #e5e9ef;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px rgba(30, 50, 70, 0.05);
+}
+
+.medicine-form-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.medicine-form-header h2 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.medicine-form-header p {
+  margin: 5px 0 0;
+  color: #8a93a3;
+  font-size: 12px;
+}
+
+.close-medicine-form {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  background: #f2f4f7;
+  color: #737d8c;
+  font-size: 21px;
+  cursor: pointer;
+}
+
+.close-medicine-form:hover {
+  background: #fff0f0;
+  color: #d14b4b;
+}
+
+.medicine-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.medicine-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.medicine-field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.medicine-field input {
+  height: 43px;
+  border: 1px solid #dfe5eb;
+  border-radius: 8px;
+  padding: 0 12px;
+  outline: none;
+  font-size: 13px;
+  box-sizing: border-box;
+  transition: 0.2s ease;
+}
+
+.medicine-field input:focus {
+  border-color: #16836c;
+  box-shadow: 0 0 0 3px rgba(22, 131, 108, 0.08);
+}
+
+.medicine-field input::placeholder {
+  color: #a5adb8;
+}
+
+.medicine-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 23px;
+}
+
+.cancel-medicine-button {
+  border: 1px solid #dfe5eb;
+  background: #ffffff;
+  color: #657080;
+  padding: 10px 17px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cancel-medicine-button:hover {
+  background: #f6f7f9;
+}
+
+.save-medicine-button {
+  border: none;
+  background: #16836c;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.save-medicine-button:hover {
+  background: #126f5b;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.medicine-content {
+  background: #ffffff;
+  border: 1px solid #e5e9ef;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(30, 50, 70, 0.04);
+}
+
+.medicine-content-heading {
+  min-height: 76px;
+  padding: 18px 23px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #edf0f3;
+}
+
+.medicine-content-heading h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.medicine-content-heading p {
+  margin: 5px 0 0;
+  color: #8a93a3;
+  font-size: 12px;
+}
+
+.total-medicine-badge {
+  background: #e9f7f2;
+  color: #16836c;
+  border-radius: 20px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.medicine-empty-state {
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.empty-medicine-icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #f0f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.medicine-empty-state h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.medicine-empty-state p {
+  max-width: 390px;
+  margin: 7px 0 18px;
+  color: #8b94a2;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.empty-add-medicine-button {
+  border: none;
+  background: #16836c;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.empty-add-medicine-button:hover {
+  background: #126f5b;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.medicine-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.medicine-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+.medicine-table th {
+  background: #fafbfc;
+  color: #8a93a3;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: left;
+  padding: 13px 20px;
+  border-bottom: 1px solid #edf0f3;
+}
+
+.medicine-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f2f5;
+  font-size: 12px;
+}
+
+.medicine-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.medicine-table tbody tr:hover {
+  background: #fcfdfd;
+}
+
+/* =========================
+   MEDICINE CELL
+========================= */
+
+.medicine-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.medicine-avatar {
+  width: 37px;
+  height: 37px;
+  border-radius: 10px;
+  background: #e9f7f2;
+  color: #16836c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+}
+
+.medicine-name-cell strong {
+  display: block;
+  color: #273142;
+  font-size: 12px;
+}
+
+.medicine-name-cell span {
+  display: block;
+  color: #9aa2ae;
+  font-size: 10px;
+  margin-top: 3px;
+}
+
+.category-text {
+  color: #687386;
+}
+
+.price-text {
+  color: #16836c;
+  font-weight: 600;
+}
+
+.stock-text {
+  color: #596575;
+  font-weight: 600;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.medicine-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #eaf8f1;
+  color: #23805e;
+  padding: 6px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.medicine-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #35a875;
+}
+
+.medicine-out-stock {
+  background: #fff0f0;
+  color: #d14b4b;
+}
+
+.medicine-out-stock .medicine-status-dot {
+  background: #d14b4b;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.medicine-action-buttons {
+  display: flex;
+  gap: 7px;
+}
+
+.medicine-edit-button,
+.medicine-delete-button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.medicine-edit-button {
+  background: #edf4ff;
+}
+
+.medicine-edit-button:hover {
+  background: #dceaff;
+}
+
+.medicine-delete-button {
+  background: #fff0f0;
+}
+
+.medicine-delete-button:hover {
+  background: #ffe0e0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+  .medicine-management-page {
+    padding: 25px 20px 40px;
+  }
+
+  .medicine-page-header {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .medicine-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .medicine-search-box {
+    width: 100%;
+  }
+
+  .add-medicine-button {
+    width: fit-content;
+  }
+
+  .medicine-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .medicine-management-page {
+    padding: 20px 14px 30px;
+  }
+
+  .medicine-title-row {
+    align-items: flex-start;
+  }
+
+  .medicine-page-header h1 {
+    font-size: 22px;
+  }
+
+  .medicine-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-medicine-button,
+  .save-medicine-button {
+    width: 100%;
+  }
+
+  .medicine-toast {
+    left: 15px;
+    right: 15px;
+    top: 85px;
+    min-width: unset;
+  }
+}
